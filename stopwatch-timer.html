@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stopwatch & Timer - OmniTools</title>
+  <meta name="description" content="Precision digital stopwatch, lap timer, countdown interval timer, and split performance tracking.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ================= Header ================= -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="OmniTools Home">
+        <div class="brand-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m15 12-8.5 8.5c-.83.83-2.17.83-3 0 0 0 0 0 0 0a2.12 2.12 0 0 1 0-3L12 9"/>
+            <path d="M17.64 15 22 10.64"/>
+            <path d="m20.91 3.26-2.17-2.17a2.12 2.12 0 0 0-3 0L13.5 3.33"/>
+          </svg>
+        </div>
+        <span class="brand-text">OmniTools</span>
+        <span class="brand-badge">Timer</span>
+      </a>
+
+      <div class="nav-search">
+        <svg class="nav-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" class="nav-search-input" placeholder="Search tools..." aria-label="Search tools">
+      </div>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="index.html#tools-section" class="nav-link active">All Tools</a></li>
+          <li><a href="index.html#about-section" class="nav-link">About</a></li>
+          <li><a href="index.html#contact-section" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="index.html" class="btn btn-secondary btn-sm">All Tools</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= Main Workspace ================= -->
+  <main class="tool-page-wrapper">
+    <div class="container">
+
+      <!-- Breadcrumbs -->
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="breadcrumb-separator">/</span>
+        <a href="index.html#tools-section">Tools</a>
+        <span class="breadcrumb-separator">/</span>
+        <span class="breadcrumb-current">Stopwatch & Timer</span>
+      </nav>
+
+      <!-- Tool Header Banner -->
+      <div class="tool-header-banner">
+        <div class="tool-meta-left">
+          <div class="tool-header-icon card-color-cyan">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="13" r="8"></circle>
+              <path d="M12 9v4l2 2"></path>
+              <path d="M5 3 2 6"></path>
+              <path d="m22 6-3-3"></path>
+              <path d="M10 2h4"></path>
+            </svg>
+          </div>
+          <div>
+            <h1 class="tool-page-title">Digital Stopwatch & Interval Timer</h1>
+            <p class="tool-page-subtitle">Millisecond resolution chronometer, lap split intervals, and productivity countdown timers.</p>
+          </div>
+        </div>
+        <span class="tool-category-badge">Time & Focus</span>
+      </div>
+
+      <!-- Tool Workspace Grid -->
+      <div class="tool-workspace-grid">
+        
+        <!-- Stopwatch Unit -->
+        <section class="tool-box" aria-label="Stopwatch Workspace">
+          
+          <!-- Mode Tabs -->
+          <div style="display: flex; justify-content: center; margin-bottom: 1.5rem;">
+            <div class="bmi-unit-toggle" style="max-width: 380px; width: 100%;">
+              <div class="bmi-unit-btn active">Stopwatch Mode</div>
+              <div class="bmi-unit-btn">Countdown Timer</div>
+            </div>
+          </div>
+
+          <!-- Digital Big Display -->
+          <div class="stopwatch-display-container">
+            <div class="timer-digits">
+              00 : 04 : 32<span class="timer-millis">.48</span>
+            </div>
+            <div style="font-size: 0.8rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.15em; margin-top: 0.5rem;">
+              Hours : Minutes : Seconds . Milliseconds
+            </div>
+          </div>
+
+          <!-- Controls Button Group -->
+          <div class="timer-controls">
+            <button class="btn btn-primary" type="button" style="background: var(--gradient-emerald); min-width: 120px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              Start
+            </button>
+            <button class="btn btn-secondary" type="button" style="min-width: 120px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg>
+              Pause
+            </button>
+            <button class="btn btn-secondary" type="button" style="min-width: 120px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path><line x1="4" y1="22" x2="4" y2="15"></line></svg>
+              Lap Split
+            </button>
+            <button class="btn btn-secondary" type="button" style="color: var(--accent-rose); min-width: 120px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path><path d="M3 3v5h5"></path></svg>
+              Reset
+            </button>
+          </div>
+
+          <!-- Quick Presets -->
+          <div style="display: flex; justify-content: center; gap: 0.5rem; margin-top: 1.5rem; flex-wrap: wrap;">
+            <button class="btn btn-secondary btn-sm" type="button">+1 Min</button>
+            <button class="btn btn-secondary btn-sm" type="button">+5 Min</button>
+            <button class="btn btn-secondary btn-sm" type="button">+10 Min</button>
+            <button class="btn btn-secondary btn-sm" type="button" style="border-color: rgba(99, 102, 241, 0.4); color: #a5b4fc;">25m Pomodoro</button>
+          </div>
+
+          <!-- Lap History List -->
+          <div class="lap-list-box">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+              <h3 style="font-size: 1rem; color: var(--text-main);">Recorded Laps</h3>
+              <span style="font-size: 0.8rem; color: var(--text-dim);">3 Recorded Splits</span>
+            </div>
+
+            <div class="lap-item fastest">
+              <span><strong>Lap 3</strong> (Fastest)</span>
+              <span>+01:08.12</span>
+              <span>04:32.48</span>
+            </div>
+
+            <div class="lap-item">
+              <span><strong>Lap 2</strong></span>
+              <span>+01:42.16</span>
+              <span>03:24.36</span>
+            </div>
+
+            <div class="lap-item slowest">
+              <span><strong>Lap 1</strong> (Slowest)</span>
+              <span>+01:42.20</span>
+              <span>01:42.20</span>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- Sidebar Reference -->
+        <aside class="tool-sidebar">
+          <div class="guide-card">
+            <h3 class="guide-card-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+              Pomodoro Flow
+            </h3>
+            <ul class="guide-list">
+              <li><strong>Focus Block:</strong> 25 minutes pure work</li>
+              <li><strong>Short Rest:</strong> 5 minutes refresh</li>
+              <li><strong>Long Rest:</strong> 15-30 mins every 4 blocks</li>
+            </ul>
+          </div>
+
+          <div class="guide-card">
+            <h3 class="guide-card-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
+              High Accuracy
+            </h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;">
+              OmniTools chronometer display is styled with monospaced tabular numerals to prevent layout shifting during high-speed millisecond transitions.
+            </p>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- ================= Footer ================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 OmniTools. Stopwatch & Timer Module.</p>
+        <p><a href="index.html">Return to All Tools &rarr;</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

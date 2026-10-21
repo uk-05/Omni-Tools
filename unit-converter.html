@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit Converter - OmniTools</title>
+  <meta name="description" content="Instant multi-unit converter for Length, Weight, Temperature, Speed, and Area with two-way swapping and formula references.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ================= Header ================= -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="OmniTools Home">
+        <div class="brand-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m15 12-8.5 8.5c-.83.83-2.17.83-3 0 0 0 0 0 0 0a2.12 2.12 0 0 1 0-3L12 9"/>
+            <path d="M17.64 15 22 10.64"/>
+            <path d="m20.91 3.26-2.17-2.17a2.12 2.12 0 0 0-3 0L13.5 3.33"/>
+          </svg>
+        </div>
+        <span class="brand-text">OmniTools</span>
+        <span class="brand-badge">Converter</span>
+      </a>
+
+      <div class="nav-search">
+        <svg class="nav-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" class="nav-search-input" placeholder="Search tools..." aria-label="Search tools">
+      </div>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="index.html#tools-section" class="nav-link active">All Tools</a></li>
+          <li><a href="index.html#about-section" class="nav-link">About</a></li>
+          <li><a href="index.html#contact-section" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="index.html" class="btn btn-secondary btn-sm">All Tools</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= Main Workspace ================= -->
+  <main class="tool-page-wrapper">
+    <div class="container">
+
+      <!-- Breadcrumbs -->
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="breadcrumb-separator">/</span>
+        <a href="index.html#tools-section">Tools</a>
+        <span class="breadcrumb-separator">/</span>
+        <span class="breadcrumb-current">Unit Converter</span>
+      </nav>
+
+      <!-- Tool Header Banner -->
+      <div class="tool-header-banner">
+        <div class="tool-meta-left">
+          <div class="tool-header-icon card-color-blue">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m21 16-4 4-4-4"></path>
+              <path d="M17 20V4"></path>
+              <path d="m3 8 4-4 4 4"></path>
+              <path d="M7 4v16"></path>
+            </svg>
+          </div>
+          <div>
+            <h1 class="tool-page-title">Universal Unit Converter</h1>
+            <p class="tool-page-subtitle">Convert between Imperial, Metric, and SI units with high precision and instant conversion formulas.</p>
+          </div>
+        </div>
+        <span class="tool-category-badge">Measurement</span>
+      </div>
+
+      <!-- Tool Workspace Grid -->
+      <div class="tool-workspace-grid">
+        
+        <!-- Converter Unit -->
+        <section class="tool-box" aria-label="Unit Converter Form">
+          
+          <!-- Category Selector Tabs -->
+          <div class="converter-categories">
+            <button class="conv-cat-btn active" type="button">Length & Distance</button>
+            <button class="conv-cat-btn" type="button">Mass & Weight</button>
+            <button class="conv-cat-btn" type="button">Temperature</button>
+            <button class="conv-cat-btn" type="button">Speed & Velocity</button>
+            <button class="conv-cat-btn" type="button">Surface Area</button>
+          </div>
+
+          <!-- Two-way Conversion Matrix -->
+          <div class="conversion-box-grid">
+            
+            <!-- From Section -->
+            <div style="background: var(--bg-secondary); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.25rem;">
+              <span class="form-label">From Unit</span>
+              <select class="form-select" style="margin-bottom: 0.75rem;">
+                <option selected>Kilometers (km)</option>
+                <option>Meters (m)</option>
+                <option>Centimeters (cm)</option>
+                <option>Miles (mi)</option>
+                <option>Yards (yd)</option>
+                <option>Feet (ft)</option>
+                <option>Inches (in)</option>
+              </select>
+              <input type="number" class="form-input" value="15" style="font-size: 1.25rem; font-weight: 700; font-family: var(--font-mono);">
+            </div>
+
+            <!-- Swap Button -->
+            <button class="swap-btn" type="button" aria-label="Swap units">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m16 3 4 4-4 4"></path>
+                <path d="M20 7H4"></path>
+                <path d="m8 21-4-4 4-4"></path>
+                <path d="M4 17h16"></path>
+              </svg>
+            </button>
+
+            <!-- To Section -->
+            <div style="background: var(--bg-secondary); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.25rem;">
+              <span class="form-label">To Unit</span>
+              <select class="form-select" style="margin-bottom: 0.75rem;">
+                <option>Kilometers (km)</option>
+                <option>Meters (m)</option>
+                <option>Centimeters (cm)</option>
+                <option selected>Miles (mi)</option>
+                <option>Yards (yd)</option>
+                <option>Feet (ft)</option>
+                <option>Inches (in)</option>
+              </select>
+              <input type="text" class="form-input" value="9.32057" readonly style="font-size: 1.25rem; font-weight: 700; color: #38bdf8; font-family: var(--font-mono); background: rgba(0,0,0,0.2);">
+            </div>
+
+          </div>
+
+          <!-- Formula & Result Card -->
+          <div class="conversion-result-card">
+            <div style="font-size: 1.25rem; font-weight: 700; color: #ffffff;">
+              15 Kilometers = 9.320568 Miles
+            </div>
+            <div class="conv-formula">
+              Formula: multiply the distance value in kilometers by 0.62137119
+            </div>
+          </div>
+
+          <!-- Quick Reference Matrix -->
+          <h3 style="font-size: 1rem; margin-top: 2rem; margin-bottom: 0.75rem; color: var(--text-main);">Common Length Multipliers</h3>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem;">
+            <div style="background: var(--bg-secondary); padding: 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); font-size: 0.825rem; text-align: center;">
+              <span style="color: var(--text-muted); display: block;">1 km =</span>
+              <strong style="color: #ffffff;">0.6214 mi</strong>
+            </div>
+            <div style="background: var(--bg-secondary); padding: 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); font-size: 0.825rem; text-align: center;">
+              <span style="color: var(--text-muted); display: block;">1 m =</span>
+              <strong style="color: #ffffff;">3.2808 ft</strong>
+            </div>
+            <div style="background: var(--bg-secondary); padding: 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); font-size: 0.825rem; text-align: center;">
+              <span style="color: var(--text-muted); display: block;">1 in =</span>
+              <strong style="color: #ffffff;">2.54 cm</strong>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- Sidebar Reference -->
+        <aside class="tool-sidebar">
+          <div class="guide-card">
+            <h3 class="guide-card-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+              SI Metric Base
+            </h3>
+            <ul class="guide-list">
+              <li><strong>Length:</strong> Meter (m)</li>
+              <li><strong>Mass:</strong> Kilogram (kg)</li>
+              <li><strong>Temperature:</strong> Kelvin (K)</li>
+              <li><strong>Time:</strong> Second (s)</li>
+            </ul>
+          </div>
+
+          <div class="guide-card">
+            <h3 class="guide-card-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20v-6M6 20V10M18 20V4"></path></svg>
+              Temperature Scale
+            </h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;">
+              Water Freezes at 0°C (32°F / 273.15K) and Boils at 100°C (212°F / 373.15K) at standard sea level atmospheric pressure.
+            </p>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- ================= Footer ================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 OmniTools. Unit Converter Module.</p>
+        <p><a href="index.html">Return to All Tools &rarr;</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

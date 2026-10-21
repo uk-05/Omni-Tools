@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Currency Converter - OmniTools</title>
+  <meta name="description" content="Live foreign exchange rate calculator and global currency converter for USD, EUR, GBP, JPY, and international forex pairs.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ================= Header ================= -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="OmniTools Home">
+        <div class="brand-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m15 12-8.5 8.5c-.83.83-2.17.83-3 0 0 0 0 0 0 0a2.12 2.12 0 0 1 0-3L12 9"/>
+            <path d="M17.64 15 22 10.64"/>
+            <path d="m20.91 3.26-2.17-2.17a2.12 2.12 0 0 0-3 0L13.5 3.33"/>
+          </svg>
+        </div>
+        <span class="brand-text">OmniTools</span>
+        <span class="brand-badge">Forex</span>
+      </a>
+
+      <div class="nav-search">
+        <svg class="nav-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" class="nav-search-input" placeholder="Search tools..." aria-label="Search tools">
+      </div>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="index.html#tools-section" class="nav-link active">All Tools</a></li>
+          <li><a href="index.html#about-section" class="nav-link">About</a></li>
+          <li><a href="index.html#contact-section" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="index.html" class="btn btn-secondary btn-sm">All Tools</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= Main Workspace ================= -->
+  <main class="tool-page-wrapper">
+    <div class="container">
+
+      <!-- Breadcrumbs -->
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="breadcrumb-separator">/</span>
+        <a href="index.html#tools-section">Tools</a>
+        <span class="breadcrumb-separator">/</span>
+        <span class="breadcrumb-current">Currency Converter</span>
+      </nav>
+
+      <!-- Tool Header Banner -->
+      <div class="tool-header-banner">
+        <div class="tool-meta-left">
+          <div class="tool-header-icon card-color-amber">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"></path>
+              <path d="M12 6v2m0 8v2"></path>
+            </svg>
+          </div>
+          <div>
+            <h1 class="tool-page-title">Global Currency Converter</h1>
+            <p class="tool-page-subtitle">Real-time foreign exchange currency conversion with mid-market rates and benchmark matrices.</p>
+          </div>
+        </div>
+        <span class="tool-category-badge">Global Finance</span>
+      </div>
+
+      <!-- Tool Workspace Grid -->
+      <div class="tool-workspace-grid">
+        
+        <!-- Converter Unit -->
+        <section class="tool-box" aria-label="Currency Converter Workspace">
+          
+          <!-- Live Rate Ticker -->
+          <div class="currency-rate-banner">
+            <div>
+              <span class="rate-text">Mid-Market Exchange Rate:</span>
+              <div class="rate-val">1 USD = 0.9248 EUR</div>
+            </div>
+            <div style="font-size: 0.75rem; color: #a5b4fc; text-align: right;">
+              <div>Updated 2 mins ago</div>
+              <div style="color: var(--accent-emerald);">● Live Market Feeds</div>
+            </div>
+          </div>
+
+          <!-- Amount Input -->
+          <div class="form-group">
+            <label class="form-label" for="curr-amount">Conversion Amount</label>
+            <input type="number" id="curr-amount" class="form-input" value="1000" style="font-size: 1.35rem; font-weight: 700; font-family: var(--font-mono);">
+          </div>
+
+          <!-- Conversion Currencies Selector Grid -->
+          <div class="conversion-box-grid" style="margin-bottom: 2rem;">
+            
+            <!-- From Currency -->
+            <div style="background: var(--bg-secondary); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.25rem;">
+              <span class="form-label">From Currency</span>
+              <select class="form-select" style="font-weight: 600;">
+                <option selected>🇺🇸 USD - United States Dollar</option>
+                <option>🇪🇺 EUR - Euro</option>
+                <option>🇬🇧 GBP - British Pound</option>
+                <option>🇯🇵 JPY - Japanese Yen</option>
+                <option>🇨🇦 CAD - Canadian Dollar</option>
+                <option>🇦🇺 AUD - Australian Dollar</option>
+                <option>🇨🇭 CHF - Swiss Franc</option>
+              </select>
+            </div>
+
+            <!-- Swap Button -->
+            <button class="swap-btn" type="button" aria-label="Swap currencies">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m16 3 4 4-4 4"></path>
+                <path d="M20 7H4"></path>
+                <path d="m8 21-4-4 4-4"></path>
+                <path d="M4 17h16"></path>
+              </svg>
+            </button>
+
+            <!-- To Currency -->
+            <div style="background: var(--bg-secondary); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.25rem;">
+              <span class="form-label">To Currency</span>
+              <select class="form-select" style="font-weight: 600;">
+                <option>🇺🇸 USD - United States Dollar</option>
+                <option selected>🇪🇺 EUR - Euro</option>
+                <option>🇬🇧 GBP - British Pound</option>
+                <option>🇯🇵 JPY - Japanese Yen</option>
+                <option>🇨🇦 CAD - Canadian Dollar</option>
+                <option>🇦🇺 AUD - Australian Dollar</option>
+                <option>🇨🇭 CHF - Swiss Franc</option>
+              </select>
+            </div>
+
+          </div>
+
+          <!-- Total Result Output Card -->
+          <div style="background: rgba(15, 23, 42, 0.9); border: 1px solid var(--border-medium); border-radius: var(--radius-md); padding: 1.75rem; text-align: center;">
+            <div style="font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em;">Converted Amount</div>
+            <div style="font-size: 2.75rem; font-weight: 800; color: #ffffff; line-height: 1.2; margin: 0.5rem 0; font-family: var(--font-mono);">
+              924.80 <span style="font-size: 1.5rem; color: #818cf8;">EUR</span>
+            </div>
+            <div style="font-size: 0.85rem; color: var(--text-muted);">
+              1 EUR = 1.0813 USD • Inverse Rate
+            </div>
+          </div>
+
+          <!-- Popular Pair Rates Matrix Table -->
+          <h3 style="font-size: 1.05rem; margin-top: 2rem; margin-bottom: 0.75rem; color: var(--text-main);">Popular Forex Pairs</h3>
+          <table class="currency-table">
+            <thead>
+              <tr>
+                <th>Currency Pair</th>
+                <th>Exchange Rate</th>
+                <th>24h Change</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>EUR / USD</strong></td>
+                <td>1.0813</td>
+                <td style="color: var(--accent-emerald);">+0.18%</td>
+              </tr>
+              <tr>
+                <td><strong>GBP / USD</strong></td>
+                <td>1.2985</td>
+                <td style="color: var(--accent-rose);">-0.05%</td>
+              </tr>
+              <tr>
+                <td><strong>USD / JPY</strong></td>
+                <td>152.40</td>
+                <td style="color: var(--accent-emerald);">+0.42%</td>
+              </tr>
+              <tr>
+                <td><strong>USD / CAD</strong></td>
+                <td>1.3820</td>
+                <td style="color: var(--accent-emerald);">+0.12%</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </section>
+
+        <!-- Sidebar Reference -->
+        <aside class="tool-sidebar">
+          <div class="guide-card">
+            <h3 class="guide-card-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+              Trading Sessions
+            </h3>
+            <ul class="guide-list">
+              <li><strong>London:</strong> 08:00 – 16:00 GMT</li>
+              <li><strong>New York:</strong> 13:00 – 21:00 GMT</li>
+              <li><strong>Tokyo:</strong> 00:00 – 08:00 GMT</li>
+              <li><strong>Sydney:</strong> 21:00 – 05:00 GMT</li>
+            </ul>
+          </div>
+
+          <div class="guide-card">
+            <h3 class="guide-card-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg>
+              Mid-Market Rate
+            </h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;">
+              The mid-market rate is the real exchange rate between the buy and sell rates of global currency markets, without retailer markups or bank margins.
+            </p>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- ================= Footer ================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 OmniTools. Currency Converter Module.</p>
+        <p><a href="index.html">Return to All Tools &rarr;</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

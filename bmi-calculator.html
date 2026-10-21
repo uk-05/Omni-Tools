@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMI Calculator - OmniTools</title>
+  <meta name="description" content="Free Body Mass Index (BMI) calculator with metric and imperial units, gender presets, and instant health classification.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ================= Header ================= -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="OmniTools Home">
+        <div class="brand-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m15 12-8.5 8.5c-.83.83-2.17.83-3 0 0 0 0 0 0 0a2.12 2.12 0 0 1 0-3L12 9"/>
+            <path d="M17.64 15 22 10.64"/>
+            <path d="m20.91 3.26-2.17-2.17a2.12 2.12 0 0 0-3 0L13.5 3.33"/>
+          </svg>
+        </div>
+        <span class="brand-text">OmniTools</span>
+        <span class="brand-badge">Health</span>
+      </a>
+
+      <div class="nav-search">
+        <svg class="nav-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" class="nav-search-input" placeholder="Search tools..." aria-label="Search tools">
+      </div>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="index.html#tools-section" class="nav-link active">All Tools</a></li>
+          <li><a href="index.html#about-section" class="nav-link">About</a></li>
+          <li><a href="index.html#contact-section" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="index.html" class="btn btn-secondary btn-sm">All Tools</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= Main Workspace ================= -->
+  <main class="tool-page-wrapper">
+    <div class="container">
+
+      <!-- Breadcrumbs -->
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="breadcrumb-separator">/</span>
+        <a href="index.html#tools-section">Tools</a>
+        <span class="breadcrumb-separator">/</span>
+        <span class="breadcrumb-current">BMI Calculator</span>
+      </nav>
+
+      <!-- Tool Header Banner -->
+      <div class="tool-header-banner">
+        <div class="tool-meta-left">
+          <div class="tool-header-icon card-color-emerald">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+              <path d="M12 5 9.04 7.96a2.17 2.17 0 0 0 0 3.08v0c.82.82 2.13.85 3 .07l2.07-1.9"></path>
+            </svg>
+          </div>
+          <div>
+            <h1 class="tool-page-title">BMI & Body Composition Calculator</h1>
+            <p class="tool-page-subtitle">Determine your Body Mass Index (BMI) using scientific WHO health metric criteria and ideal weight estimates.</p>
+          </div>
+        </div>
+        <span class="tool-category-badge">Health & Fitness</span>
+      </div>
+
+      <!-- Tool Workspace Grid -->
+      <div class="tool-workspace-grid">
+        
+        <!-- Calculator Form & Output -->
+        <section class="tool-box" aria-label="BMI Calculator Form">
+          
+          <!-- Unit Toggle Switch -->
+          <div class="bmi-unit-toggle">
+            <div class="bmi-unit-btn active">Metric Units (cm, kg)</div>
+            <div class="bmi-unit-btn">Imperial Units (ft, in, lbs)</div>
+          </div>
+
+          <!-- Gender Cards -->
+          <div class="form-group">
+            <label class="form-label">Biological Gender</label>
+            <div class="gender-select-grid">
+              <div class="gender-card active">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="14" r="5"></circle><line x1="19" y1="5" x2="13.6" y2="10.4"></line><line x1="19" y1="5" x2="14" y2="5"></line><line x1="19" y1="5" x2="19" y2="10"></line></svg>
+                <div style="font-weight: 700;">Male</div>
+              </div>
+              <div class="gender-card">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5"></circle><line x1="12" y1="14" x2="12" y2="21"></line><line x1="9" y1="18" x2="15" y2="18"></line></svg>
+                <div style="font-weight: 700;">Female</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Form Inputs -->
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="bmi-age">Age (Years)</label>
+              <input type="number" id="bmi-age" class="form-input" value="28" min="2" max="120">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="bmi-height">Height (Centimeters)</label>
+              <input type="number" id="bmi-height" class="form-input" value="175" min="50" max="250">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="bmi-weight">Weight (Kilograms)</label>
+            <input type="number" id="bmi-weight" class="form-input" value="68" min="20" max="300" step="0.5">
+          </div>
+
+          <button class="btn btn-primary" type="button" style="width: 100%; margin-top: 0.5rem;">
+            Recalculate BMI
+          </button>
+
+          <!-- Result Display Card -->
+          <div class="bmi-result-card">
+            <span style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700; letter-spacing: 0.05em;">Your BMI Score</span>
+            <div class="bmi-score">22.2</div>
+            <div class="bmi-category" style="color: var(--accent-emerald);">Normal Weight Range</div>
+            
+            <!-- Spectrum Visual Gauge -->
+            <div class="bmi-meter">
+              <div class="bmi-meter-pointer"></div>
+            </div>
+            <div class="bmi-meter-labels">
+              <span>Underweight (&lt; 18.5)</span>
+              <span>Normal (18.5 - 24.9)</span>
+              <span>Overweight (25 - 29.9)</span>
+              <span>Obese (&ge; 30)</span>
+            </div>
+
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 1.25rem;">
+              Healthy BMI weight for height of <strong>175 cm</strong>: <strong>56.7 kg – 76.2 kg</strong>.
+            </p>
+          </div>
+
+        </section>
+
+        <!-- Sidebar Reference -->
+        <aside class="tool-sidebar">
+          <div class="guide-card">
+            <h3 class="guide-card-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+              WHO Classification
+            </h3>
+            <ul class="guide-list">
+              <li><strong>&lt; 18.5:</strong> Underweight</li>
+              <li><strong>18.5 – 24.9:</strong> Optimum Normal</li>
+              <li><strong>25.0 – 29.9:</strong> Overweight</li>
+              <li><strong>30.0 – 34.9:</strong> Obesity Class I</li>
+              <li><strong>&gt; 35.0:</strong> Extreme Obesity</li>
+            </ul>
+          </div>
+
+          <div class="guide-card">
+            <h3 class="guide-card-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
+              Health Disclaimer
+            </h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;">
+              BMI is a screening tool, not a diagnostic measure of body fat percentage or muscle mass. Athletes and elderly individuals may have varying evaluations.
+            </p>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- ================= Footer ================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 OmniTools. BMI Calculator Module.</p>
+        <p><a href="index.html">Return to All Tools &rarr;</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

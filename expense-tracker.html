@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expense Tracker & Budget - OmniTools</title>
+  <meta name="description" content="Personal budget planner and expense tracker with income monitoring, spending breakdown, and cash flow balance summaries.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ================= Header ================= -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="OmniTools Home">
+        <div class="brand-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m15 12-8.5 8.5c-.83.83-2.17.83-3 0 0 0 0 0 0 0a2.12 2.12 0 0 1 0-3L12 9"/>
+            <path d="M17.64 15 22 10.64"/>
+            <path d="m20.91 3.26-2.17-2.17a2.12 2.12 0 0 0-3 0L13.5 3.33"/>
+          </svg>
+        </div>
+        <span class="brand-text">OmniTools</span>
+        <span class="brand-badge">Finance</span>
+      </a>
+
+      <div class="nav-search">
+        <svg class="nav-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" class="nav-search-input" placeholder="Search tools..." aria-label="Search tools">
+      </div>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="index.html#tools-section" class="nav-link active">All Tools</a></li>
+          <li><a href="index.html#about-section" class="nav-link">About</a></li>
+          <li><a href="index.html#contact-section" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="index.html" class="btn btn-secondary btn-sm">All Tools</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= Main Workspace ================= -->
+  <main class="tool-page-wrapper">
+    <div class="container">
+
+      <!-- Breadcrumbs -->
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="breadcrumb-separator">/</span>
+        <a href="index.html#tools-section">Tools</a>
+        <span class="breadcrumb-separator">/</span>
+        <span class="breadcrumb-current">Expense Tracker</span>
+      </nav>
+
+      <!-- Tool Header Banner -->
+      <div class="tool-header-banner">
+        <div class="tool-meta-left">
+          <div class="tool-header-icon card-color-emerald">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="1" x2="12" y2="23"></line>
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+            </svg>
+          </div>
+          <div>
+            <h1 class="tool-page-title">Expense & Cash Flow Tracker</h1>
+            <p class="tool-page-subtitle">Track income, categorize personal expenses, and visualize monthly savings ratios.</p>
+          </div>
+        </div>
+        <span class="tool-category-badge">Personal Finance</span>
+      </div>
+
+      <!-- Tool Workspace Grid -->
+      <div class="tool-workspace-grid">
+        
+        <!-- Main Ledger & Form -->
+        <section class="tool-box" aria-label="Expense Ledger">
+          
+          <!-- Summary Cards -->
+          <div class="budget-summary-grid">
+            <div class="budget-card">
+              <div class="budget-card-title">Net Balance</div>
+              <div class="budget-card-val val-balance">$4,820.50</div>
+              <span style="font-size: 0.75rem; color: var(--accent-emerald);">+12.4% vs last month</span>
+            </div>
+            <div class="budget-card">
+              <div class="budget-card-title">Total Income</div>
+              <div class="budget-card-val val-income">+$6,500.00</div>
+              <span style="font-size: 0.75rem; color: var(--text-dim);">Primary salary + gigs</span>
+            </div>
+            <div class="budget-card">
+              <div class="budget-card-title">Total Expenses</div>
+              <div class="budget-card-val val-expense">-$1,679.50</div>
+              <span style="font-size: 0.75rem; color: var(--text-dim);">26% of monthly income</span>
+            </div>
+          </div>
+
+          <!-- Add Transaction Form -->
+          <h3 style="font-size: 1.1rem; margin-bottom: 1rem; color: var(--text-main);">Log New Transaction</h3>
+          <form onsubmit="return false;" style="margin-bottom: 2rem;">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="tx-type">Transaction Type</label>
+                <select id="tx-type" class="form-select">
+                  <option value="expense">Expense (-)</option>
+                  <option value="income">Income (+)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="tx-amount">Amount (USD)</label>
+                <input type="number" id="tx-amount" class="form-input" placeholder="0.00" value="84.50" step="0.01">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="tx-title">Merchant / Description</label>
+                <input type="text" id="tx-title" class="form-input" placeholder="e.g. Whole Foods Market" value="Organic Groceries & Produce">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="tx-category">Category</label>
+                <select id="tx-category" class="form-select">
+                  <option>Food & Groceries</option>
+                  <option>Housing & Rent</option>
+                  <option>Utilities & Internet</option>
+                  <option>Tech & Software</option>
+                  <option>Entertainment</option>
+                  <option>Transportation</option>
+                </select>
+              </div>
+            </div>
+
+            <button class="btn btn-primary" type="button" style="width: 100%;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+              Add To Ledger
+            </button>
+          </form>
+
+          <!-- Recent Transactions List -->
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+            <h3 style="font-size: 1.1rem; color: var(--text-main);">Recent Transactions</h3>
+            <span style="font-size: 0.8rem; color: var(--text-dim);">Showing latest 4 entries</span>
+          </div>
+
+          <ul class="tx-list">
+            <li class="tx-item">
+              <div class="tx-icon-group">
+                <div class="tx-icon card-color-emerald">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+                </div>
+                <div>
+                  <div class="tx-title">Enterprise Consulting Stipend</div>
+                  <div class="tx-date">Oct 18, 2026 • Direct Deposit</div>
+                </div>
+              </div>
+              <div class="tx-amount plus">+$4,250.00</div>
+            </li>
+
+            <li class="tx-item">
+              <div class="tx-icon-group">
+                <div class="tx-icon card-color-rose">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
+                </div>
+                <div>
+                  <div class="tx-title">Apartment Modern Lease</div>
+                  <div class="tx-date">Oct 15, 2026 • Housing</div>
+                </div>
+              </div>
+              <div class="tx-amount minus">-$1,250.00</div>
+            </li>
+
+            <li class="tx-item">
+              <div class="tx-icon-group">
+                <div class="tx-icon card-color-rose">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
+                </div>
+                <div>
+                  <div class="tx-title">Cloud VPS Server Cluster</div>
+                  <div class="tx-date">Oct 12, 2026 • Tech Infrastructure</div>
+                </div>
+              </div>
+              <div class="tx-amount minus">-$85.00</div>
+            </li>
+
+            <li class="tx-item">
+              <div class="tx-icon-group">
+                <div class="tx-icon card-color-rose">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
+                </div>
+                <div>
+                  <div class="tx-title">Artisan Coffee Roasters</div>
+                  <div class="tx-date">Oct 10, 2026 • Food & Beverage</div>
+                </div>
+              </div>
+              <div class="tx-amount minus">-$16.50</div>
+            </li>
+          </ul>
+
+        </section>
+
+        <!-- Sidebar Reference -->
+        <aside class="tool-sidebar">
+          <div class="guide-card">
+            <h3 class="guide-card-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg>
+              50 / 30 / 20 Budget Rule
+            </h3>
+            <ul class="guide-list">
+              <li><strong>50% Needs:</strong> Rent, utilities, basic groceries</li>
+              <li><strong>30% Wants:</strong> Dining out, hobbies, subscriptions</li>
+              <li><strong>20% Savings:</strong> Emergency fund, investments</li>
+            </ul>
+          </div>
+
+          <div class="guide-card">
+            <h3 class="guide-card-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+              Savings Velocity
+            </h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;">
+              Maintaining an expenditure under 30% of income accelerates financial independence by an average of 4.2x compared to standard saving rates.
+            </p>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- ================= Footer ================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 OmniTools. Expense Tracker Module.</p>
+        <p><a href="index.html">Return to All Tools &rarr;</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

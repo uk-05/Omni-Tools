@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Word & Character Counter - OmniTools</title>
+  <meta name="description" content="Free online word counter, character counter, reading time estimator, sentence analyzer, and text case transformation tool.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ================= Header ================= -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="OmniTools Home">
+        <div class="brand-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m15 12-8.5 8.5c-.83.83-2.17.83-3 0 0 0 0 0 0 0a2.12 2.12 0 0 1 0-3L12 9"/>
+            <path d="M17.64 15 22 10.64"/>
+            <path d="m20.91 3.26-2.17-2.17a2.12 2.12 0 0 0-3 0L13.5 3.33"/>
+          </svg>
+        </div>
+        <span class="brand-text">OmniTools</span>
+        <span class="brand-badge">Writing</span>
+      </a>
+
+      <div class="nav-search">
+        <svg class="nav-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" class="nav-search-input" placeholder="Search tools..." aria-label="Search tools">
+      </div>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="index.html#tools-section" class="nav-link active">All Tools</a></li>
+          <li><a href="index.html#about-section" class="nav-link">About</a></li>
+          <li><a href="index.html#contact-section" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="index.html" class="btn btn-secondary btn-sm">All Tools</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= Main Workspace ================= -->
+  <main class="tool-page-wrapper">
+    <div class="container">
+
+      <!-- Breadcrumbs -->
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="breadcrumb-separator">/</span>
+        <a href="index.html#tools-section">Tools</a>
+        <span class="breadcrumb-separator">/</span>
+        <span class="breadcrumb-current">Word Counter</span>
+      </nav>
+
+      <!-- Tool Header Banner -->
+      <div class="tool-header-banner">
+        <div class="tool-meta-left">
+          <div class="tool-header-icon card-color-violet">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="4 7 4 4 20 4 20 7"></polyline>
+              <line x1="9" y1="20" x2="15" y2="20"></line>
+              <line x1="12" y1="4" x2="12" y2="20"></line>
+            </svg>
+          </div>
+          <div>
+            <h1 class="tool-page-title">Word & Character Counter</h1>
+            <p class="tool-page-subtitle">Real-time textual analysis, reading duration projections, sentence metrics, and keyword density.</p>
+          </div>
+        </div>
+        <span class="tool-category-badge">Content & Writing</span>
+      </div>
+
+      <!-- Tool Workspace Grid -->
+      <div class="tool-workspace-grid">
+        
+        <!-- Counter Workspace -->
+        <section class="tool-box" aria-label="Word Counter Workspace">
+          
+          <!-- Key Metrics Grid -->
+          <div class="stats-counter-grid">
+            <div class="counter-stat-card">
+              <span class="counter-stat-num">124</span>
+              <span class="counter-stat-title">Words</span>
+            </div>
+            <div class="counter-stat-card">
+              <span class="counter-stat-num">782</span>
+              <span class="counter-stat-title">Characters</span>
+            </div>
+            <div class="counter-stat-card">
+              <span class="counter-stat-num">6</span>
+              <span class="counter-stat-title">Sentences</span>
+            </div>
+            <div class="counter-stat-card">
+              <span class="counter-stat-num">2</span>
+              <span class="counter-stat-title">Paragraphs</span>
+            </div>
+          </div>
+
+          <!-- Secondary Metrics Bar -->
+          <div style="display: flex; justify-content: space-between; background: var(--bg-secondary); padding: 0.75rem 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle); margin-bottom: 1.25rem; font-size: 0.85rem; flex-wrap: wrap; gap: 0.75rem;">
+            <div>
+              <span style="color: var(--text-muted);">Characters (No Spaces):</span>
+              <strong style="color: #ffffff; margin-left: 0.25rem;">659</strong>
+            </div>
+            <div>
+              <span style="color: var(--text-muted);">Est. Reading Time:</span>
+              <strong style="color: #38bdf8; margin-left: 0.25rem;">~31 sec</strong>
+            </div>
+            <div>
+              <span style="color: var(--text-muted);">Est. Speaking Time:</span>
+              <strong style="color: #34d399; margin-left: 0.25rem;">~50 sec</strong>
+            </div>
+          </div>
+
+          <!-- Textarea Input Area -->
+          <div class="form-group" style="margin-bottom: 0.5rem;">
+            <textarea class="form-textarea text-counter-textarea" placeholder="Paste or type your content here to begin live analysis...">OmniTools provides a high-performance collection of modern, responsive, precision-engineered web tools. From scientific calculations to productivity trackers, simplify your daily tasks without hassle. 
+
+Every single utility in the OmniTools suite operates completely client-side in your web browser. This architectural design ensures that none of your private data, documents, calculations, or passwords ever touch an external cloud server, guaranteeing uncompromising privacy and instant performance across all desktop and mobile devices.</textarea>
+          </div>
+
+          <!-- Action Toolbar -->
+          <div class="text-action-bar">
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+              <button class="btn btn-secondary btn-sm" type="button">UPPERCASE</button>
+              <button class="btn btn-secondary btn-sm" type="button">lowercase</button>
+              <button class="btn btn-secondary btn-sm" type="button">Title Case</button>
+            </div>
+            <div style="display: flex; gap: 0.5rem;">
+              <button class="btn btn-secondary btn-sm" type="button">Clear Text</button>
+              <button class="btn btn-primary btn-sm" type="button">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                Copy Text
+              </button>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- Sidebar Reference -->
+        <aside class="tool-sidebar">
+          <div class="guide-card">
+            <h3 class="guide-card-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+              SEO & Social Limits
+            </h3>
+            <ul class="guide-list">
+              <li><strong>SEO Title:</strong> 50 – 60 chars</li>
+              <li><strong>Meta Description:</strong> 150 – 160 chars</li>
+              <li><strong>X / Twitter:</strong> 280 chars</li>
+              <li><strong>LinkedIn Post:</strong> 3,000 chars max</li>
+            </ul>
+          </div>
+
+          <div class="guide-card">
+            <h3 class="guide-card-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+              Reading Benchmarks
+            </h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;">
+              Average adult silent reading speed is ~238 words per minute. Speech reading pace is typically 130 – 150 words per minute.
+            </p>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- ================= Footer ================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 OmniTools. Word Counter Module.</p>
+        <p><a href="index.html">Return to All Tools &rarr;</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

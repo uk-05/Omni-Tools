@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OmniTools - All-in-One Modern Web Utilities</title>
+  <meta name="description" content="A curated suite of clean, fast, modern productivity and calculation web tools. Calculators, converters, text tools, and utilities all in one place.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ================= Header / Navigation ================= -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="OmniTools Home">
+        <div class="brand-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m15 12-8.5 8.5c-.83.83-2.17.83-3 0 0 0 0 0 0 0a2.12 2.12 0 0 1 0-3L12 9"/>
+            <path d="M17.64 15 22 10.64"/>
+            <path d="m20.91 3.26-2.17-2.17a2.12 2.12 0 0 0-3 0L13.5 3.33"/>
+            <path d="m14.5 12.5 2-2"/>
+            <path d="m11.5 9.5 2-2"/>
+          </svg>
+        </div>
+        <span class="brand-text">OmniTools</span>
+        <span class="brand-badge">Pro Suite</span>
+      </a>
+
+      <!-- Search Bar UI -->
+      <div class="nav-search">
+        <svg class="nav-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" class="nav-search-input" placeholder="Search 10+ free tools..." aria-label="Search tools">
+      </div>
+
+      <!-- Navigation Links -->
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="#tools-section" class="nav-link">All Tools</a></li>
+          <li><a href="#about-section" class="nav-link">About</a></li>
+          <li><a href="#contact-section" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#tools-section" class="btn btn-primary btn-sm">Explore Suite</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= Hero Section ================= -->
+  <main>
+    <section class="hero-section">
+      <div class="container hero-content">
+        <div class="hero-pill">
+          <span class="hero-pill-dot"></span>
+          <span>100% Free, Private & Lightning Fast Utilities</span>
+        </div>
+
+        <h1 class="hero-title">
+          <span class="hero-gradient-text">Empower Your Workflow With</span><br>
+          <span class="hero-highlight">OmniTools Digital Suite</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          A high-performance collection of modern, responsive, precision-engineered web tools. From scientific calculations to productivity trackers, simplify your daily tasks without hassle.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#tools-section" class="btn btn-primary" id="cta-explore">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="5 3 19 12 5 21 5 3"></polygon>
+            </svg>
+            Explore Tools
+          </a>
+          <a href="scientific-calculator.html" class="btn btn-secondary">
+            Quick Launch: Calculator
+          </a>
+        </div>
+
+        <!-- Hero Stats -->
+        <div class="hero-stats-bar">
+          <div class="stat-item">
+            <span class="stat-number">10+</span>
+            <span class="stat-label">Precision Tools</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">0ms</span>
+            <span class="stat-label">Server Latency</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Data Privacy</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Tools Grid Section ================= -->
+    <section class="tools-section" id="tools-section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="section-subtitle-tag">Suite Catalog</span>
+            <h2 class="section-title">All Utility Applications</h2>
+            <p class="section-desc">Select any specialized tool below to launch its dedicated, full-screen workspace.</p>
+          </div>
+        </div>
+
+        <div class="tools-grid">
+
+          <!-- Tool 1: Scientific Calculator -->
+          <article class="tool-card">
+            <div class="tool-card-top">
+              <div class="tool-card-icon-box card-color-indigo">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="4" y="2" width="16" height="20" rx="2"></rect>
+                  <line x1="8" y1="6" x2="16" y2="6"></line>
+                  <line x1="16" y1="14" x2="16" y2="14.01"></line>
+                  <line x1="12" y1="14" x2="12" y2="14.01"></line>
+                  <line x1="8" y1="14" x2="8" y2="14.01"></line>
+                  <line x1="16" y1="18" x2="16" y2="18.01"></line>
+                  <line x1="12" y1="18" x2="12" y2="18.01"></line>
+                  <line x1="8" y1="18" x2="8" y2="18.01"></line>
+                </svg>
+              </div>
+              <span class="tool-category-badge">Math & Science</span>
+            </div>
+            <h3 class="tool-card-title">Scientific Calculator</h3>
+            <p class="tool-card-desc">
+              Solve complex equations with trigonometric functions (sin, cos, tan), logarithms, square roots, exponents, and memory functions.
+            </p>
+            <a href="scientific-calculator.html" class="btn-tool" id="btn-calc">
+              <span>Use Calculator</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </article>
+
+          <!-- Tool 2: BMI Calculator -->
+          <article class="tool-card">
+            <div class="tool-card-top">
+              <div class="tool-card-icon-box card-color-emerald">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+                  <path d="M12 5 9.04 7.96a2.17 2.17 0 0 0 0 3.08v0c.82.82 2.13.85 3 .07l2.07-1.9"></path>
+                </svg>
+              </div>
+              <span class="tool-category-badge">Health & Fitness</span>
+            </div>
+            <h3 class="tool-card-title">BMI Calculator</h3>
+            <p class="tool-card-desc">
+              Calculate your Body Mass Index (BMI) instantly using metric or imperial units, with visual classification meters and category breakdowns.
+            </p>
+            <a href="bmi-calculator.html" class="btn-tool" id="btn-bmi">
+              <span>Use BMI Tool</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </article>
+
+          <!-- Tool 3: Age Calculator -->
+          <article class="tool-card">
+            <div class="tool-card-top">
+              <div class="tool-card-icon-box card-color-cyan">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                  <circle cx="12" cy="15" r="2"></circle>
+                </svg>
+              </div>
+              <span class="tool-category-badge">Time & Dates</span>
+            </div>
+            <h3 class="tool-card-title">Age Calculator</h3>
+            <p class="tool-card-desc">
+              Find your exact chronological age in years, months, weeks, days, hours, and minutes, plus a countdown to your next milestone birthday.
+            </p>
+            <a href="age-calculator.html" class="btn-tool" id="btn-age">
+              <span>Calculate Age</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </article>
+
+          <!-- Tool 4: To-Do List -->
+          <article class="tool-card">
+            <div class="tool-card-top">
+              <div class="tool-card-icon-box card-color-amber">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 11l3 3L22 4"></path>
+                  <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                </svg>
+              </div>
+              <span class="tool-category-badge">Productivity</span>
+            </div>
+            <h3 class="tool-card-title">To-Do Task Board</h3>
+            <p class="tool-card-desc">
+              Streamline daily tasks with organized priority badges, status filters (All, Active, Completed), and intuitive checklist cards.
+            </p>
+            <a href="todo-list.html" class="btn-tool" id="btn-todo">
+              <span>Open Task Board</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </article>
+
+          <!-- Tool 5: Expense Tracker -->
+          <article class="tool-card">
+            <div class="tool-card-top">
+              <div class="tool-card-icon-box card-color-emerald">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" y1="1" x2="12" y2="23"></line>
+                  <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                </svg>
+              </div>
+              <span class="tool-category-badge">Finance</span>
+            </div>
+            <h3 class="tool-card-title">Expense Tracker</h3>
+            <p class="tool-card-desc">
+              Monitor incoming cashflow and expenses with real-time budget metric summaries, categorized transaction history, and balance indicators.
+            </p>
+            <a href="expense-tracker.html" class="btn-tool" id="btn-expense">
+              <span>Track Budget</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </article>
+
+          <!-- Tool 6: Unit Converter -->
+          <article class="tool-card">
+            <div class="tool-card-top">
+              <div class="tool-card-icon-box card-color-blue">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m21 16-4 4-4-4"></path>
+                  <path d="M17 20V4"></path>
+                  <path d="m3 8 4-4 4 4"></path>
+                  <path d="M7 4v16"></path>
+                </svg>
+              </div>
+              <span class="tool-category-badge">Conversions</span>
+            </div>
+            <h3 class="tool-card-title">Unit Converter</h3>
+            <p class="tool-card-desc">
+              Convert units of Length (km, m, miles), Weight (kg, lbs, oz), and Temperature (°C, °F, K) with two-way swapping and formula references.
+            </p>
+            <a href="unit-converter.html" class="btn-tool" id="btn-unit">
+              <span>Convert Units</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </article>
+
+          <!-- Tool 7: Word & Character Counter -->
+          <article class="tool-card">
+            <div class="tool-card-top">
+              <div class="tool-card-icon-box card-color-violet">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="4 7 4 4 20 4 20 7"></polyline>
+                  <line x1="9" y1="20" x2="15" y2="20"></line>
+                  <line x1="12" y1="4" x2="12" y2="20"></line>
+                </svg>
+              </div>
+              <span class="tool-category-badge">Content & Writing</span>
+            </div>
+            <h3 class="tool-card-title">Word & Character Counter</h3>
+            <p class="tool-card-desc">
+              Analyze text in real-time with comprehensive metrics: total word count, characters, sentences, paragraphs, reading time, and speaking pace.
+            </p>
+            <a href="word-counter.html" class="btn-tool" id="btn-word">
+              <span>Count Words</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </article>
+
+          <!-- Tool 8: Password Generator -->
+          <article class="tool-card">
+            <div class="tool-card-top">
+              <div class="tool-card-icon-box card-color-rose">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+              </div>
+              <span class="tool-category-badge">Security</span>
+            </div>
+            <h3 class="tool-card-title">Password Generator</h3>
+            <p class="tool-card-desc">
+              Generate cryptographically strong, uncrackable passwords with customizable length, symbols, numbers, and visual security entropy meters.
+            </p>
+            <a href="password-generator.html" class="btn-tool" id="btn-pwd">
+              <span>Generate Password</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </article>
+
+          <!-- Tool 9: Currency Converter -->
+          <article class="tool-card">
+            <div class="tool-card-top">
+              <div class="tool-card-icon-box card-color-amber">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"></path>
+                  <path d="M12 6v2m0 8v2"></path>
+                </svg>
+              </div>
+              <span class="tool-category-badge">Global Finance</span>
+            </div>
+            <h3 class="tool-card-title">Currency Converter</h3>
+            <p class="tool-card-desc">
+              Convert global currencies including USD, EUR, GBP, JPY, CAD, and AUD with realistic conversion rates and quick exchange rate comparison matrices.
+            </p>
+            <a href="currency-converter.html" class="btn-tool" id="btn-currency">
+              <span>Convert Currency</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </article>
+
+          <!-- Tool 10: Stopwatch & Timer -->
+          <article class="tool-card">
+            <div class="tool-card-top">
+              <div class="tool-card-icon-box card-color-cyan">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="13" r="8"></circle>
+                  <path d="M12 9v4l2 2"></path>
+                  <path d="M5 3 2 6"></path>
+                  <path d="m22 6-3-3"></path>
+                  <path d="M10 2h4"></path>
+                </svg>
+              </div>
+              <span class="tool-category-badge">Time & Focus</span>
+            </div>
+            <h3 class="tool-card-title">Stopwatch & Timer</h3>
+            <p class="tool-card-desc">
+              High-precision digital chronometer with millisecond accuracy, Start/Pause/Reset triggers, and formatted lap record management.
+            </p>
+            <a href="stopwatch-timer.html" class="btn-tool" id="btn-timer">
+              <span>Open Stopwatch</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= About / Feature Highlights ================= -->
+    <section class="features-section" id="about-section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="section-subtitle-tag">Built For Excellence</span>
+            <h2 class="section-title">Why Choose OmniTools?</h2>
+            <p class="section-desc">Designed with pure web standards for unbeatable speed, privacy, and responsiveness.</p>
+          </div>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-box">
+            <div class="feature-icon-wrapper">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+            </div>
+            <h3 class="feature-title">Ultra Lightweight & Fast</h3>
+            <p class="feature-desc">Engineered with clean semantic HTML5 and modern CSS3 for instant rendering without bloated framework bundles.</p>
+          </div>
+
+          <div class="feature-box">
+            <div class="feature-icon-wrapper">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+            </div>
+            <h3 class="feature-title">100% Client-Side Privacy</h3>
+            <p class="feature-desc">Your inputs, calculations, passwords, and notes never leave your browser. Zero tracking and no external servers.</p>
+          </div>
+
+          <div class="feature-box">
+            <div class="feature-icon-wrapper">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+            </div>
+            <h3 class="feature-title">Adaptive Responsive Design</h3>
+            <p class="feature-desc">Pixel-perfect usability across smartphones, tablets, laptops, and ultra-wide desktop monitors.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Contact / Quick CTA ================= -->
+    <section class="container" id="contact-section" style="padding: 4rem 1.5rem; text-align: center;">
+      <div style="background: var(--bg-surface-elevated); border: 1px solid var(--border-medium); border-radius: var(--radius-lg); padding: 3rem 2rem; max-width: 800px; margin: 0 auto; box-shadow: var(--shadow-lg);">
+        <span class="section-subtitle-tag">Stay Connected</span>
+        <h2 style="font-size: 2rem; margin-bottom: 0.75rem;">Need a Custom Tool Added?</h2>
+        <p style="color: var(--text-muted); max-width: 500px; margin: 0 auto 1.75rem;">
+          We are constantly expanding OmniTools with more calculation, text, and financial utilities. Let us know what you would like to see next!
+        </p>
+        <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+          <a href="mailto:support@omnitools.local" class="btn btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            Send Feedback
+          </a>
+          <a href="#tools-section" class="btn btn-secondary">Browse All 10 Tools</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= Footer ================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand-col">
+          <a href="index.html" class="brand-logo">
+            <div class="brand-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m15 12-8.5 8.5c-.83.83-2.17.83-3 0 0 0 0 0 0 0a2.12 2.12 0 0 1 0-3L12 9"/>
+                <path d="M17.64 15 22 10.64"/>
+                <path d="m20.91 3.26-2.17-2.17a2.12 2.12 0 0 0-3 0L13.5 3.33"/>
+              </svg>
+            </div>
+            <span class="brand-text">OmniTools</span>
+          </a>
+          <p class="footer-desc">
+            The premier suite of clean, modern, zero-overhead browser tools built strictly with semantic HTML5 and modern CSS3.
+          </p>
+          <div class="footer-socials">
+            <a href="#" class="social-link" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Twitter">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
+            </a>
+            <a href="#" class="social-link" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Calculators</h4>
+          <ul class="footer-link-list">
+            <li><a href="scientific-calculator.html">Scientific Calculator</a></li>
+            <li><a href="bmi-calculator.html">BMI Calculator</a></li>
+            <li><a href="age-calculator.html">Age Calculator</a></li>
+            <li><a href="unit-converter.html">Unit Converter</a></li>
+            <li><a href="currency-converter.html">Currency Converter</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Productivity</h4>
+          <ul class="footer-link-list">
+            <li><a href="todo-list.html">To-Do Task Board</a></li>
+            <li><a href="expense-tracker.html">Expense Tracker</a></li>
+            <li><a href="word-counter.html">Word Counter</a></li>
+            <li><a href="password-generator.html">Password Generator</a></li>
+            <li><a href="stopwatch-timer.html">Stopwatch & Timer</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Platform</h4>
+          <ul class="footer-link-list">
+            <li><a href="#about-section">Architecture</a></li>
+            <li><a href="#tools-section">Privacy Guarantee</a></li>
+            <li><a href="#contact-section">Open Source</a></li>
+            <li><a href="#contact-section">Support</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 OmniTools Platform. Precision Crafted with HTML5 & CSS3. All Rights Reserved.</p>
+        <p>Built strictly without heavy JavaScript frameworks for maximum speed.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
