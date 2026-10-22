@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PDF to Word & Word to PDF Converter - OmniTools</title>
+  <meta name="description" content="Free online two-way PDF to Word (DOCX) and Word to PDF converter. 100% private, client-side document conversion with live preview and formatting preservation.">
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Client-side Document Engines (Fast CDN with local resilience fallbacks) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+
+  <!-- ================= Header / Navigation ================= -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="OmniTools Home">
+        <div class="brand-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m15 12-8.5 8.5c-.83.83-2.17.83-3 0 0 0 0 0 0 0a2.12 2.12 0 0 1 0-3L12 9"/>
+            <path d="M17.64 15 22 10.64"/>
+            <path d="m20.91 3.26-2.17-2.17a2.12 2.12 0 0 0-3 0L13.5 3.33"/>
+          </svg>
+        </div>
+        <span class="brand-text">OmniTools</span>
+        <span class="brand-badge">Documents</span>
+      </a>
+
+      <!-- Search Bar UI -->
+      <div class="nav-search">
+        <svg class="nav-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" class="nav-search-input" placeholder="Search tools..." aria-label="Search tools">
+      </div>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="index.html#tools-section" class="nav-link active">All Tools</a></li>
+          <li><a href="index.html#about-section" class="nav-link">About</a></li>
+          <li><a href="index.html#contact-section" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="index.html" class="btn btn-secondary btn-sm">All Tools</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= Main Workspace ================= -->
+  <main class="tool-page-wrapper">
+    <div class="container">
+
+      <!-- Breadcrumbs -->
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="breadcrumb-separator">/</span>
+        <a href="index.html#tools-section">Tools</a>
+        <span class="breadcrumb-separator">/</span>
+        <span class="breadcrumb-current">PDF ⇄ Word Converter</span>
+      </nav>
+
+      <!-- Tool Header Banner -->
+      <div class="tool-header-banner">
+        <div class="tool-meta-left">
+          <div class="tool-header-icon card-color-blue">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+              <polyline points="10 9 9 9 8 9"></polyline>
+            </svg>
+          </div>
+          <div>
+            <h1 class="tool-page-title">PDF to Word & Word to PDF Converter</h1>
+            <p class="tool-page-subtitle">Two-way client-side document transformation. Convert PDF into editable Word (.docx / .doc) or convert Word documents into polished PDFs with live formatting preview.</p>
+          </div>
+        </div>
+        <span class="tool-category-badge">Document Studio</span>
+      </div>
+
+      <!-- Main Workspace Grid -->
+      <div class="tool-workspace-grid" style="grid-template-columns: minmax(0, 1fr) 340px;">
+
+        <!-- Main Conversion Area -->
+        <div class="doc-converter-container">
+
+          <!-- Mode Selector Bar (Two-Way Direction Switcher) -->
+          <div class="converter-mode-card">
+            <div class="mode-switch-wrapper">
+              
+              <!-- Tab 1: PDF to Word -->
+              <button type="button" class="mode-tab-btn active" id="tab-pdf-to-word" data-direction="pdf-to-word">
+                <span class="mode-icon-badge badge-pdf">PDF</span>
+                <span class="mode-arrow">➔</span>
+                <span class="mode-icon-badge badge-word">Word (.docx)</span>
+                <span class="mode-tab-title">PDF to Word</span>
+              </button>
+
+              <!-- Two-Way Swap Button -->
+              <button type="button" class="btn-swap-mode" id="btn-swap-direction" title="Swap Conversion Direction">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m7 16-4-4 4-4"></path>
+                  <path d="M3 12h18"></path>
+                  <path d="m17 8 4 4-4 4"></path>
+                </svg>
+              </button>
+
+              <!-- Tab 2: Word to PDF -->
+              <button type="button" class="mode-tab-btn" id="tab-word-to-pdf" data-direction="word-to-pdf">
+                <span class="mode-icon-badge badge-word">Word (.docx)</span>
+                <span class="mode-arrow">➔</span>
+                <span class="mode-icon-badge badge-pdf">PDF</span>
+                <span class="mode-tab-title">Word to PDF</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Drag and Drop Upload Zone Card -->
+          <div class="upload-dropzone-card" id="doc-dropzone">
+            <input type="file" id="doc-file-input" class="file-input-hidden" accept=".pdf">
+            
+            <div class="dropzone-empty-state" id="dropzone-empty">
+              <div class="dropzone-icon-circle">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="17 8 12 3 7 8"></polyline>
+                  <line x1="12" y1="3" x2="12" y2="15"></line>
+                </svg>
+              </div>
+              <h3 class="dropzone-title" id="dropzone-title-text">Drag & Drop Your PDF File Here</h3>
+              <p class="dropzone-subtitle" id="dropzone-subtitle-text">or <span class="browse-link">browse from your computer</span> (.pdf up to 50MB)</p>
+              
+              <div class="dropzone-tags">
+                <span class="dropzone-tag-item" id="tag-input-ext">Input: .PDF</span>
+                <span class="dropzone-tag-item" id="tag-output-ext">Output: Editable .DOCX / .DOC</span>
+                <span class="dropzone-tag-item">🔒 100% In-Browser & Private</span>
+              </div>
+            </div>
+
+            <!-- Loaded File State (Initially Hidden) -->
+            <div class="dropzone-loaded-state" id="dropzone-loaded" style="display: none;">
+              <div class="file-meta-row">
+                <div class="file-icon-box" id="file-icon-display">
+                  <span class="file-ext-badge" id="file-badge-text">PDF</span>
+                </div>
+                <div class="file-details">
+                  <h4 class="file-name" id="file-name-display">sample-document.pdf</h4>
+                  <div class="file-meta-tags">
+                    <span id="file-size-display">1.4 MB</span>
+                    <span class="meta-dot">•</span>
+                    <span id="file-status-display">Ready for conversion</span>
+                  </div>
+                </div>
+                <div class="file-actions">
+                  <button type="button" class="btn btn-secondary btn-sm" id="btn-change-file">Change File</button>
+                  <button type="button" class="btn btn-danger-icon" id="btn-remove-file" title="Remove File">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Conversion Progress Indicator -->
+              <div class="conversion-progress-box" id="progress-box" style="display: none;">
+                <div class="progress-status-row">
+                  <span class="progress-step-text" id="progress-step-text">Reading binary stream...</span>
+                  <span class="progress-percent" id="progress-percent">45%</span>
+                </div>
+                <div class="meter-bar-track">
+                  <div class="meter-bar-fill fill-cyan" id="progress-bar-fill" style="width: 45%;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Conversion Controls & Options Bar -->
+          <div class="conversion-settings-card">
+            <div class="settings-grid">
+              
+              <!-- Option 1: Output Format -->
+              <div class="setting-item" id="setting-format-group">
+                <label class="setting-label" for="select-output-format">Output Format</label>
+                <select id="select-output-format" class="form-select">
+                  <option value="docx" selected>Microsoft Word (.docx - Modern OpenXML)</option>
+                  <option value="doc">Word Document (.doc - Rich Text XML)</option>
+                  <option value="txt">Plain Text (.txt - Clean Unicode)</option>
+                </select>
+              </div>
+
+              <!-- Option 2: PDF Page Orientation & Size (Used in Word-to-PDF) -->
+              <div class="setting-item" id="setting-pdf-pagesize" style="display: none;">
+                <label class="setting-label" for="select-page-size">PDF Page Layout</label>
+                <select id="select-page-size" class="form-select">
+                  <option value="a4" selected>A4 (210 × 297 mm)</option>
+                  <option value="letter">US Letter (8.5 × 11 in)</option>
+                  <option value="legal">US Legal (8.5 × 14 in)</option>
+                </select>
+              </div>
+
+              <!-- Option 3: Formatting Mode -->
+              <div class="setting-item">
+                <label class="setting-label" for="select-layout-mode">Structure Reconstruction</label>
+                <select id="select-layout-mode" class="form-select">
+                  <option value="flow" selected>Formatted Flow (Clean Headings & Paragraphs)</option>
+                  <option value="exact">Exact Layout & Visual Spacing</option>
+                  <option value="plain">Raw Text Extraction</option>
+                </select>
+              </div>
+
+              <!-- Action Trigger -->
+              <div class="setting-item" style="display: flex; align-items: flex-end;">
+                <button type="button" class="btn btn-primary" id="btn-start-convert" style="width: 100%; height: 42px;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                  </svg>
+                  <span id="convert-btn-text">Convert to Word</span>
+                </button>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Document Live Previewer & Visual Editor -->
+          <div class="doc-preview-card" id="doc-preview-container">
+            <div class="preview-header-bar">
+              <div class="preview-title-box">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                <span class="preview-heading-title">Live Document Preview & Editor</span>
+                <span class="preview-status-badge" id="preview-status-badge">Sample View</span>
+              </div>
+
+              <!-- Editor Tools Toolbar -->
+              <div class="editor-quick-toolbar">
+                <button type="button" class="tb-btn" data-cmd="bold" title="Bold"><b>B</b></button>
+                <button type="button" class="tb-btn" data-cmd="italic" title="Italic"><i>I</i></button>
+                <button type="button" class="tb-btn" data-cmd="underline" title="Underline"><u>U</u></button>
+                <span class="tb-sep"></span>
+                <button type="button" class="tb-btn" data-cmd="formatBlock" data-val="h2" title="Heading 2">H2</button>
+                <button type="button" class="tb-btn" data-cmd="formatBlock" data-val="p" title="Paragraph">¶</button>
+                <button type="button" class="tb-btn" data-cmd="insertUnorderedList" title="Bullet List">• List</button>
+              </div>
+
+              <div class="preview-action-group">
+                <button type="button" class="btn btn-secondary btn-sm" id="btn-copy-preview-text">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                  Copy Text
+                </button>
+                <button type="button" class="btn btn-primary btn-sm" id="btn-download-converted">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                  <span id="download-btn-text">Download Word File</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Sheet Content Display Area -->
+            <div class="doc-sheet-viewport">
+              <div class="doc-page-canvas" id="doc-editable-content" contenteditable="true" spellcheck="true">
+                <h2>OmniTools Executive Summary & Document Spec</h2>
+                <p>Welcome to the <strong>OmniTools High-Performance Document Converter</strong>. This client-side utility provides instantaneous two-way conversion between Portable Document Format (PDF) and Microsoft Word OpenXML (.docx) files without requiring server round-trips or third-party cloud uploads.</p>
+                
+                <h3>Key Document Capabilities</h3>
+                <ul>
+                  <li><strong>Two-Way Engine:</strong> Convert PDF to editable Word (.docx / .doc) and Word (.docx) to PDF with a single toggle.</li>
+                  <li><strong>Complete Client-Side Security:</strong> 100% of the byte stream decompression, text extraction, and XML assembly executes inside your local browser sandbox.</li>
+                  <li><strong>Format Preservation:</strong> Retains headings, font weights, paragraph breaks, bulleted lists, and structured layouts.</li>
+                  <li><strong>Integrated Live Editor:</strong> Modify document text, refine typos, and adjust formatting directly inside the preview sheet prior to generating your download.</li>
+                </ul>
+
+                <p>To begin converting your files, select your desired conversion mode above and drop any PDF or Word document into the designated dropzone!</p>
+              </div>
+            </div>
+
+            <!-- Document Footer Stats -->
+            <div class="preview-footer-stats">
+              <div>
+                <span style="color: var(--text-muted);">Word Count:</span>
+                <strong id="preview-word-count" style="color: var(--text-main); margin-left: 0.25rem;">128 words</strong>
+              </div>
+              <div>
+                <span style="color: var(--text-muted);">Characters:</span>
+                <strong id="preview-char-count" style="color: var(--text-main); margin-left: 0.25rem;">890</strong>
+              </div>
+              <div>
+                <span style="color: var(--text-muted);">Pages:</span>
+                <strong id="preview-page-count" style="color: var(--accent-cyan); margin-left: 0.25rem;">1 Page</strong>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Sidebar Reference -->
+        <aside class="tool-sidebar">
+          
+          <div class="guide-card">
+            <h3 class="guide-card-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              Zero-Server Data Privacy
+            </h3>
+            <p class="guide-card-text">
+              Unlike commercial PDF web services that upload sensitive contracts and financial statements to remote servers, OmniTools executes PDF rendering and DOCX generation <strong>entirely inside your browser's local sandbox</strong>.
+            </p>
+            <div style="margin-top: 0.75rem; padding: 0.5rem 0.75rem; background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.25); border-radius: var(--radius-sm); font-size: 0.8rem; color: #34d399;">
+              ✓ Safe for confidential business documents<br>
+              ✓ Safe for medical & legal records<br>
+              ✓ Zero data retention or analytics
+            </div>
+          </div>
+
+          <div class="guide-card">
+            <h3 class="guide-card-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+              Supported File Formats
+            </h3>
+            <ul class="guide-list" style="font-size: 0.85rem;">
+              <li><strong>PDF (.pdf):</strong> Adobe Portable Document Format, scanned documents, invoices, academic papers.</li>
+              <li><strong>Word (.docx):</strong> Modern Microsoft Word 2007-2024, Google Docs, LibreOffice Writer.</li>
+              <li><strong>Word 97-2003 (.doc):</strong> Legacy Word XML format with maximum backward compatibility.</li>
+              <li><strong>Text (.txt):</strong> Standard UTF-8 plain text clean extraction.</li>
+            </ul>
+          </div>
+
+          <div class="guide-card">
+            <h3 class="guide-card-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+              Conversion Tips
+            </h3>
+            <p class="guide-card-text" style="font-size: 0.85rem;">
+              • For the best results converting PDF to Word, use PDFs generated from text editors rather than camera photos.<br><br>
+              • Use the live document editor to quickly clean up formatting or fix headings before clicking <strong>Download Word File</strong>.
+            </p>
+          </div>
+
+        </aside>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- ================= Footer ================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand-col">
+          <a href="index.html" class="brand-logo">
+            <div class="brand-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m15 12-8.5 8.5c-.83.83-2.17.83-3 0 0 0 0 0 0 0a2.12 2.12 0 0 1 0-3L12 9"/>
+                <path d="M17.64 15 22 10.64"/>
+                <path d="m20.91 3.26-2.17-2.17a2.12 2.12 0 0 0-3 0L13.5 3.33"/>
+              </svg>
+            </div>
+            <span class="brand-text">OmniTools</span>
+          </a>
+          <p class="footer-desc">
+            The premier suite of clean, modern, zero-overhead browser tools built strictly with semantic HTML5 and modern CSS3.
+          </p>
+          <div class="footer-socials">
+            <a href="#" class="social-link" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg></a>
+            <a href="#" class="social-link" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg></a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Calculators</h4>
+          <ul class="footer-link-list">
+            <li><a href="scientific-calculator.html">Scientific Calculator</a></li>
+            <li><a href="bmi-calculator.html">BMI Calculator</a></li>
+            <li><a href="age-calculator.html">Age Calculator</a></li>
+            <li><a href="unit-converter.html">Unit Converter</a></li>
+            <li><a href="currency-converter.html">Currency Converter</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Document & Text Tools</h4>
+          <ul class="footer-link-list">
+            <li><a href="humanize-text.html">AI Text Humanizer</a></li>
+            <li><a href="pdf-word-converter.html">PDF ⇄ Word Converter</a></li>
+            <li><a href="word-counter.html">Word Counter</a></li>
+            <li><a href="password-generator.html">Password Generator</a></li>
+            <li><a href="todo-list.html">To-Do Task Board</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Platform</h4>
+          <ul class="footer-link-list">
+            <li><a href="index.html#about-section">Architecture</a></li>
+            <li><a href="index.html#tools-section">Privacy Guarantee</a></li>
+            <li><a href="index.html#contact-section">Open Source</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 OmniTools Platform. Precision Crafted with HTML5 & CSS3. All Rights Reserved.</p>
+        <p>Built strictly without heavy JavaScript frameworks for maximum speed.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
